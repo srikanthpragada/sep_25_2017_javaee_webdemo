@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration</title>
+<link rel="stylesheet" href="styles.css"/>
+<script>
+    function validate() {
+    	
+    	var fullnameError = document.getElementById("fullnameError");
+    	var emailError = document.getElementById("emailError");
+    	
+    	fullnameError.innerText = "";
+    	emailError.innerText = "";
+    	
+    	var isValid = true;
+    	// validate fullname
+    	var fullname =  document.getElementById("fullname");
+    	if ( fullname.value == "")	{
+    		fullnameError.innerText="Missing Fullname!";
+    		isValid = false;
+    	}
+    	
+    	// Validate Email 
+    	var email =  document.getElementById("email");
+    	if ( email.value == "")	{
+    		emailError.innerText="Missing Email Address!";
+    		isValid = false;
+    	}
+    	   
+        return isValid;
+    }
+</script>
+</head>
+<body>
+<h1>Registration</h1>
+
+<form action="register" onsubmit="return validate()">
+<span class="prompt">Fullname</span> <br/>
+<input type="text" id="fullname" name="fullname" />
+<span id="fullnameError" class="error"></span>
+<p/>
+<span class="prompt">Email Address</span> <br/>
+<input type="text" id="email" name="email" />
+<span id="emailError" class="error"></span>
+<p/>
+<input type="submit" value="Register" />
+
+</form>
+
+</body>
+</html>

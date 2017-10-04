@@ -1,0 +1,9 @@
+@charset "ISO-8859-1";
+
+h1 { color : blue; font-family: arial; font-size:20pt;}
+
+body { font-family : verdana; font-size : 11pt;}
+
+.prompt { color: green;}
+
+.error { color :red; }
