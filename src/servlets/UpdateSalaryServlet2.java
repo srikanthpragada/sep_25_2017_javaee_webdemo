@@ -15,6 +15,11 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/updateSalary2")
 public class UpdateSalaryServlet2 extends HttpServlet {
 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+	    doGet(request,response);	
+	}
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
