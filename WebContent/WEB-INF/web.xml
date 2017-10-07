@@ -8,6 +8,10 @@
   <servlet>
      <servlet-name>Time</servlet-name>
      <servlet-class>servlets.TimeServlet</servlet-class>
+     <init-param>
+        <param-name>topic</param-name>
+        <param-value>Java EE</param-value>
+     </init-param>
   </servlet>
   
   <servlet-mapping>
