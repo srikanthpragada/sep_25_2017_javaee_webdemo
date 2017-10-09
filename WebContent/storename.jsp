@@ -4,15 +4,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Today</title>
+<title>Insert title here</title>
 </head>
 <body>
-    <h2>Current date and time</h2>
-    <%
-         out.println( new java.util.Date());
-    %>
-    
-    <hr/>
-   
+<%
+  
+  String username = request.getParameter("username");
+  // create a cookie
+  
+  Cookie c = new Cookie("username", username);
+  c.setMaxAge(24 * 60 * 60);  // 1 day
+  
+  response.addCookie(c);
+  
+  response.sendRedirect("showdetails.jsp");
+  
+
+%>
+
 </body>
 </html>
