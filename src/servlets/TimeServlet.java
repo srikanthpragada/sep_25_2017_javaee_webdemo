@@ -5,10 +5,12 @@ import java.io.PrintWriter;
 import java.util.Date;
 
 import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 // @WebServlet(urlPatterns = { "/time" })
 public class TimeServlet extends HttpServlet {
@@ -30,6 +32,11 @@ public class TimeServlet extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		HttpSession session = request.getSession();
+		// session.invalidate();
+		ServletContext application = getServletContext();
+		
 		response.setContentType("text/html"); 
 		PrintWriter out = response.getWriter();
 		out.println("<h1>" + new Date()  + "</h1>");
