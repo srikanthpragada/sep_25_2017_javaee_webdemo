@@ -10,6 +10,8 @@
     <h2>Current date and time</h2>
     <%
          out.println( new java.util.Date());
+         
+         out.println( application.getRealPath(""));
     %>
     
     <hr/>
