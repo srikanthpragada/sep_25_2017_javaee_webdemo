@@ -11,7 +11,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 
-@WebFilter("*.jsp")
+// @WebFilter("*.jsp")
 public class LogFilter implements Filter {
 	public void destroy() {
 		 
