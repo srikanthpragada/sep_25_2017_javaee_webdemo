@@ -1,2 +1,6 @@
 JSTL  -  https://mvnrepository.com/artifact/javax.servlet/jstl/1.2
 
+Java Mail - https://mvnrepository.com/artifact/com.sun.mail/javax.mail/1.6.0
+
+
+JSON API  - https://mvnrepository.com/artifact/org.glassfish/javax.json/1.1
