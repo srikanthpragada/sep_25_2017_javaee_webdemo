@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>AJAX and XML with JQUERY </title>
-        <script src="jquery-3.1.0.js"></script>
+        <script src="jquery-3.2.1.js"></script>
         <script>
             function getEmployeeDetails()  {
                 // make clock image visible
@@ -24,7 +24,7 @@
                 else  // found employee and got details 
                 {
                     $("#empname").val($(data).find("name").text());
-                    $("#empsal").val($("salary", data).text())
+                    $("#empsal").val($(data).find("salary").text())
                 }
             }
         </script>

@@ -1,17 +1,28 @@
 <html>
-<script type="text/javascript" src="jquery-1.11.1.js"></script>
+<script type="text/javascript" src="jquery-3.2.1.js"></script>
 <script>
 	function showToday() {
 		var now = new Date();
-		$("#today").html(now.toString());
+		// $("#today").html(now.toString());
+		$("span.time").html(now.toString());
+	}
+	
+	function clearText() {
+		$("span.time").html("");
 	}
 </script>
 <body>
 		<h2>jQuery Demo</h2>
-		<button ID="btnToday"
+		<button
 		    onclick="showToday()">Show Date & Time</button>
+        <button 
+		    onclick="clearText()">Clear</button>
 		<p />
-		<span id="today" />
-
+		<span>Click on buttons for required action</span>
+		<p/>
+		<span class="time" id="today"></span>
+		<p/>		
+		<span class="time" id="today2"></span>
+		
 </body>
 </html>

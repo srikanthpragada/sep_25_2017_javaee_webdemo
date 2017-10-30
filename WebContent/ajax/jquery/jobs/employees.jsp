@@ -1,6 +1,6 @@
 <%@page import="javax.json.*" contentType="application/json"%>
 <%
-    Thread.sleep(5000);
+    // Thread.sleep(5000);
 	javax.sql.rowset.CachedRowSet rs = new oracle.jdbc.rowset.OracleCachedRowSet();
 	rs.setUrl("jdbc:oracle:thin:@localhost:1521:XE");
 	rs.setUsername("hr");
@@ -11,9 +11,7 @@
 
 	JsonArrayBuilder emps = Json.createArrayBuilder();
 	while (rs.next()) {
-		JsonObjectBuilder emp = Json.createObjectBuilder();
-		emp.add("fullname", rs.getString("fullname"));
-		emps.add(emp.build());
+		emps.add(rs.getString("fullname"));
 	}
 
 	rs.close();

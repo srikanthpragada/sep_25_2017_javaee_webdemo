@@ -1,8 +1,8 @@
 <html>
  <head>
   <title>Jobs and Employees</title>
-  <script type="text/javascript" src="../jquery-1.11.1.js"></script>
-  <script type="text/javascript" language="javascript">
+  <script src="../jquery-3.2.1.js"></script>
+  <script>
    // this is done when page is loaded  (document ready)
    $(
      function() {
@@ -11,11 +11,12 @@
    );
  
    function displayJobs(data) {
-       $.each(data, function(index,job){
-       // add items to List box
-       $("#jobs").append("<option value='" + job.id + "'>"
-                + job.title + "</option>");
-       }
+       $.each(data, 
+    		   function(index,job)
+    		   {
+                // add items to List box
+                $("#jobs").append("<option value='" + job.id + "'>" + job.title + "</option>");
+               }
        );
    }
    function getEmployees() {
@@ -25,10 +26,11 @@
           displayEmployees);
    }
    function displayEmployees(data) {
-      $.each(data, function(index,emp){
-       // add items to List box
-       $("#employees").append("<option>" + emp.fullname + "</option>");
-       } // end of function
+      $.each(data,
+    		  function(index,empname){
+                  // add items to List box
+                  $("#employees").append("<option>" + empname + "</option>");
+               } // end of function
       ); // each
     }
    </script>
