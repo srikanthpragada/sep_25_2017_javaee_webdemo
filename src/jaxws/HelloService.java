@@ -10,4 +10,9 @@ public class HelloService {
 	public String hello() {
 		return "Hello SOAP World!";
 	}
+	 
+	@WebMethod
+	public String greet(String name) {
+		return "Hello " + name;
+	}
 }
