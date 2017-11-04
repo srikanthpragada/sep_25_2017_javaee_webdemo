@@ -7,3 +7,5 @@ JSON API  - https://mvnrepository.com/artifact/org.glassfish/javax.json/1.1
 
 
 Metro project - https://javaee.github.io/metro/download
+
+Jersy project - https://jersey.github.io/download.html

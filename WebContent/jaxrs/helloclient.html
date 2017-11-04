@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Hello Client</title>
+<script src="../ajax/jquery/jquery-3.2.1.js"></script>
+<script>
+ function callHello() {
+	 $.get("/webdemo/rest/hello/" + $("#name").val(),{}, showResult);
+ }
+ 
+ function showResult(result) {
+	 $("#result").html(result);
+ }
+</script>
+</head>
+<body>
+Name : <input type="text" id="name"/>
+<button onclick="callHello()">Call Hello </button>
+<p>
+<div id="result"></div>
+
+</body>
+</html>
