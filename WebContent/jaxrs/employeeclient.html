@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Hello Client</title>
+<script src="../ajax/jquery/jquery-3.2.1.js"></script>
+<script>
+	function callAllEmployees() {
+		$.getJSON("/webdemo/rest/employees", {}, showEmployees);
+	}
+
+	function callEmpByDept() {
+		$.getJSON("/webdemo/rest/employees/dept/" + $("#id").val(), {},
+				showEmployees);
+	}
+
+	function callEmpByJob() {
+		$.getJSON("/webdemo/rest/employees/job/" + $("#id").val(), {},
+				showEmployees);
+	}
+
+	function showEmployees(employees) {
+		$("#employees").html(""); // clear UL data
+
+		if (employees.length == 0) {
+			alert("Sorry! No employees found!");
+			return;
+		}
+		$.each(employees, function(idx, emp) {
+			$("#employees").append(
+					"<li>" + emp.name + "," + emp.salary + "</li>");
+		});
+
+	}
+</script>
+</head>
+<body>
+	Id :
+	<input type="text" id="id" />
+	Salary : <input type="text" id="salary" />
+	<button onclick="updateSalary()">Update Salary </button>
+	
+	<p />
+	<button onclick="callAllEmployees()">Get All Employees</button>
+	<button onclick="callEmpByDept()">Get Employees By Dept</button>
+	<button onclick="callEmpByJob()">Get Employees By Job</button>
+	<p>
+	<ul id="employees">
+
+	</ul>
+
+</body>
+</html>
