@@ -32,14 +32,66 @@
 		});
 
 	}
+
+	// send id and salary as form param
+	function updateSalary() {
+		$.ajax({
+			url : "../rest/employees",
+			data : {
+				"id" : $("#id").val(),
+				"salary" : $("#salary").val()
+			},
+			method : "PUT",
+			complete : showUpdateResult
+		});
+	}
+	
+	// send id as path param
+	function updateSalary2() {
+		$.ajax({
+			url : "../rest/employees/" + $("#id").val(),
+			data : {
+				"salary" : $("#salary").val()
+			},
+			method : "PUT",
+			complete : showUpdateResult
+		});
+	}
+	
+
+	//  result is of type jqXHR 
+	function showUpdateResult(result) {
+		console.log(result);
+		if (result.status == 204)
+			alert("Updated Salary Successfully");
+		else
+			if ( result.status == 404)
+				alert("Sorry! Employee Id  Not Found");
+   		    else
+			    alert("Sorry! Could not update salary due to some error!");
+	}
+	
+	
+	// send id as path param
+	function deleteEmployee() {
+		$.ajax({
+			url : "../rest/employees/" + $("#id").val(),
+			method : "DELETE",
+			complete : showDeleteResult
+		});
+	}
+	
+	
+	
 </script>
 </head>
 <body>
 	Id :
-	<input type="text" id="id" />
-	Salary : <input type="text" id="salary" />
-	<button onclick="updateSalary()">Update Salary </button>
-	
+	<input type="text" id="id" /> Salary :
+	<input type="text" id="salary" />
+	<button onclick="updateSalary()">Update Salary</button>
+	<button onclick="updateSalary2()">Update Salary 2	</button>
+
 	<p />
 	<button onclick="callAllEmployees()">Get All Employees</button>
 	<button onclick="callEmpByDept()">Get Employees By Dept</button>
