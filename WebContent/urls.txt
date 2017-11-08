@@ -9,3 +9,5 @@ JSON API  - https://mvnrepository.com/artifact/org.glassfish/javax.json/1.1
 Metro project - https://javaee.github.io/metro/download
 
 Jersy project - https://jersey.github.io/download.html
+
+Mojarra = - https://mvnrepository.com/artifact/org.glassfish/javax.faces/2.3.3
