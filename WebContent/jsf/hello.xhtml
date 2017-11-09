@@ -1,14 +1,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html" >
 <head>
   <title>Hello</title>
 </head>
 
 <body>
+  <h:form>
    <h1>Hello</h1>
-   
-   <h:outputText value="Hello From JSF!"/>
-
+   <h:inputText id="name"
+       value="#{helloBean.name}"
+       requiredMessage="Name is required!"
+       validatorMessage="Invalid Name. Please enter only letters and spaces"
+       required="true">
+       <f:validateRegex pattern="^[A-Za-z ]{3,20}$"></f:validateRegex>
+   </h:inputText>
+       
+   <h:message for="name"></h:message>
+   <p/>
+   <h:commandButton  value="Greet" actionListener="#{helloBean.greet}" ></h:commandButton>
+   <p/>
+   <h:outputText value="#{helloBean.title}"/>
+  </h:form>
 </body>
 
 </html>
