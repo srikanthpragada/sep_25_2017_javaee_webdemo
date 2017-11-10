@@ -1,0 +1,25 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough" >
+<head>
+  <title>Sale</title>
+   
+</head>
+<body>
+  <h:form id="saleForm" >
+   <h1>Sale</h1>
+   Product ID <br/>
+   <h:inputText id="id" value="#{productBean.id}"> </h:inputText>
+   <h:message for="id"></h:message>
+   <p/>
+   Qty Sold <br/>
+   <h:inputText id="qty" value="#{productBean.qty}"> </h:inputText>
+   <h:message for="qty"></h:message>
+   <p/>
+   <h:commandButton  value="Submit" action="#{productBean.sale}"></h:commandButton>
+
+  </h:form>
+</body>
+
+</html>
