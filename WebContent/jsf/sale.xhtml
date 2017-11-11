@@ -10,11 +10,15 @@
   <h:form id="saleForm" >
    <h1>Sale</h1>
    Product ID <br/>
-   <h:inputText id="id" value="#{productBean.id}"> </h:inputText>
+   <h:inputText id="id" value="#{productBean.id}">
+         <f:validateBean></f:validateBean>
+   </h:inputText>
    <h:message for="id"></h:message>
    <p/>
    Qty Sold <br/>
-   <h:inputText id="qty" value="#{productBean.qty}"> </h:inputText>
+   <h:inputText id="qty" value="#{productBean.qty}">
+     
+   </h:inputText>
    <h:message for="qty"></h:message>
    <p/>
    <h:commandButton  value="Submit" action="#{productBean.sale}"></h:commandButton>

@@ -11,3 +11,6 @@ Metro project - https://javaee.github.io/metro/download
 Jersy project - https://jersey.github.io/download.html
 
 Mojarra = - https://mvnrepository.com/artifact/org.glassfish/javax.faces/2.3.3
+
+
+Hibernate Validator - http://hibernate.org/validator/releases/6.0/
