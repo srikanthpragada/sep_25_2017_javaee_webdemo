@@ -10,6 +10,7 @@
    <h1>Hello</h1>
    <h:inputText id="name"
        value="#{helloBean.name}"
+       valueChangeListener="#{helloBean.changed}"
        requiredMessage="Name is required!"
        validatorMessage="Invalid Name. Please enter only letters and spaces"
        required="true">

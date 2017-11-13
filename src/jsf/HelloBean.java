@@ -2,11 +2,15 @@ package jsf;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.event.ActionEvent;
+import javax.faces.event.ValueChangeEvent;
 
 @ManagedBean
 public class HelloBean {
 	private String name = "Srikanth", title = "";
 
+	public HelloBean() {
+		System.out.println("HelloBean()");
+	}
 	public String getName() {
 		return name;
 	}
@@ -25,5 +29,9 @@ public class HelloBean {
 	public void greet(ActionEvent evt) {
 		System.out.println("greet()");
         title = "Hello, " + name.toUpperCase();
+	}
+	
+	public void changed(ValueChangeEvent evt) {
+		System.out.println("changed name. New name : " + evt.getNewValue());
 	}
 }

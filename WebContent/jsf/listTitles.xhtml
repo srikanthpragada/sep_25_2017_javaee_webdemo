@@ -1,24 +1,35 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	>
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 <head>
-  <title>List Jobs</title>
-  <style>  
-    .headers { background-color : blue; color :white; font-weight : bold;}
-  </style>
+<title>List Jobs</title>
+<style>
+.headers {
+	background-color: blue;
+	color: white;
+	font-weight: bold;
+}
+</style>
 </head>
 
 <body>
+	<ul>
+		<ui:repeat var="title" value="#{jobsBean.titles}" varStatus="status">
+			<ui:fragment rendered="#{status.first}">
+				<h1>Jobs</h1>
+			</ui:fragment>
+			<li>#{status.index} - #{title}</li>
+		</ui:repeat>
+	</ul>
 
-	<h1>List Of Job Titles</h1>
+	<hr />
 
-    <ul>
-	<ui:repeat var="title" value="#{jobsBean.titles}">
-	    <li>#{title} </li>
-	</ui:repeat>
-	</ul>  
+	<ul>
+		<ui:repeat var="title" value="#{jobsBean.titles}" offset="5" size="10">
+			<li>#{title}</li>
+		</ui:repeat>
+	</ul>
 
 </body>
 

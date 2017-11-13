@@ -28,28 +28,27 @@ public class JobsBean {
 			return null;
 		}
 	}
-	
-	
-	// property jobs
-		public List<String> getTitles() {
 
-			try {
-				CachedRowSet crs = new OracleCachedRowSet();
-				crs.setUrl("jdbc:oracle:thin:@localhost:1521:xe");
-				crs.setUsername("hr");
-				crs.setPassword("hr");
-				crs.setCommand("select job_title from jobs");
-				crs.execute();
-				
-				ArrayList<String> titles = new ArrayList<>();
-				while( crs.next() ) {
-					titles.add( crs.getString("job_title"));
-				}
-				return titles;
-			} catch (Exception ex) {
-				System.out.println(ex.getMessage());
-				return null;
+	// property jobs
+	public List<String> getTitles() {
+
+		try {
+			CachedRowSet crs = new OracleCachedRowSet();
+			crs.setUrl("jdbc:oracle:thin:@localhost:1521:xe");
+			crs.setUsername("hr");
+			crs.setPassword("hr");
+			crs.setCommand("select job_title from jobs");
+			crs.execute();
+
+			ArrayList<String> titles = new ArrayList<>();
+			while (crs.next()) {
+				titles.add(crs.getString("job_title"));
 			}
+			return titles;
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+			return null;
 		}
+	}
 
 }
