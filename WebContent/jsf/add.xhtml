@@ -1,0 +1,21 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+	<title>Ajax Demo</title>
+</h:head>
+
+<body>
+	<h:form>
+		<h1>Ajax Demo</h1>
+		<h:inputText id="num1" value="#{addBean.num1}" />
+		<h:inputText id="num2" value="#{addBean.num2}" />
+		<h:commandButton value="Add" actionListener="#{addBean.add}">
+			<f:ajax execute="num1 num2" render="result" />
+		</h:commandButton>
+		<p />
+		<h:outputText value="#{addBean.result}" id="result" />
+	</h:form>
+</body>
+
+</html>

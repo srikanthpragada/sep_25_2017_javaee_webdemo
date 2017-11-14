@@ -1,0 +1,20 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+	<title>Upload Demo</title>
+</h:head>
+
+<body>
+	<h:form enctype="multipart/form-data">
+		<h1>Upload Demo</h1>
+        <h:inputFile id="mobileFile"  value="#{uploadBean.file}"></h:inputFile>
+		<h:commandButton value="Upload" actionListener="#{uploadBean.process}">
+ 	    </h:commandButton>
+		<p />
+		<h:inputTextarea  rows="10"
+		    value="#{uploadBean.numbers}" id="numbers"/>
+	</h:form>
+</body>
+
+</html>

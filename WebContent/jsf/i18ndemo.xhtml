@@ -1,0 +1,14 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<head>
+<title>i18n Demo</title>
+</head>
+
+<body>
+	<f:view locale="#{facesContext.externalContext.request.locale}">
+		<f:loadBundle var="msgs" basename="jsf.messages"></f:loadBundle>
+		<h1>#{msgs.message}</h1>
+	</f:view>
+</body>
+</html>
