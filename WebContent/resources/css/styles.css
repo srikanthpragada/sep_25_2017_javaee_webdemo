@@ -1,0 +1,20 @@
+@charset "ISO-8859-1";
+
+.banner {
+	background-color:red;
+	color :white;
+	font-family : arial;
+	font-size:30pt;
+	font-weight: bold;
+}
+
+.menu {
+	background-color: silver;
+	font-family : verdana;
+	font-size:12pt;
+	font-weight: bold;
+}
+
+.content {
+	background-color: beige;
+}

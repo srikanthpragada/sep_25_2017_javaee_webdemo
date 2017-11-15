@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html" >
+<h:head>
+  <title>View Action Demo</title>
+</h:head>
+
+<body>
+ <f:view>
+  <f:metadata>
+     <f:viewAction action="#{actionBean.process}"/>
+     <f:viewParam  name="timezone"  value="#{actionBean.timezone}" />
+  </f:metadata>
+  <h:form>
+   <h1>View Action Demo</h1>
+   Time in  <h:outputText value="#{actionBean.timezone}"/> is <h:outputText value="#{actionBean.message}"/>
+  </h:form>
+
+ </f:view>  
+</body>
+
+</html>

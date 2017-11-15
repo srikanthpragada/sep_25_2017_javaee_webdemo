@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" >
+<h:head>
+  <title>JSF Examples</title>
+  <h:outputStylesheet library="css" name="styles.css"></h:outputStylesheet>
+</h:head>
+
+<h:body>
+  <div class="banner">JSF Examples</div>
+  <div class="menu">
+    <a href="f.xhtml">First</a>
+    <a href="s.xhtml">Second</a>
+    <a href="t.xhtml">Third</a>
+    <a href="fo.xhtml">Fourth</a>
+  </div>
+  
+  <div class="content">
+     <h1><ui:insert name="title"></ui:insert></h1>
+     <ui:insert name="body"></ui:insert>
+  </div>
+</h:body>
+</html>
